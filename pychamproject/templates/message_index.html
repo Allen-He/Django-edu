@@ -5,7 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 <body>
-	<div class="message">
+<form action="/form/" method="post" class='smart'>
+    <div class="message">
 		<div class="title">
 			<h1>留言信息</h1>
 			<h4>请留下你的信息</h4>
@@ -13,24 +14,27 @@
 		<div class="body">
 			<div class="name">
 				<span>姓名：</span>
-				<input type="text" name="name">
+				<input type="text" name="name" id="name" placeholder="请输入姓名">
 			</div>
 			<div class="email">
 				<span>邮箱：</span>
-				<input type="text" name="email">
+				<input type="text" name="email" id="email" placeholder="请输入邮箱">
 			</div>
 			<div class="address">
 				<span>联系地址：</span>
-				<input type="text" name="address">
+				<input type="text" name="address" id="address" placeholder="请输入联系地址">
 			</div>
 			<div class="context">
 				<span>留言：</span>
-				<input type="text" name="context">
+                <textarea name="context" id="context" rows="3" cols="30" placeholder="请输入你的留言"></textarea>
 			</div>
 		</div>
 		<div class="filler">
-			<input type="submit" name="submit">
+			<input type="submit" name="submit" value="提交">
 		</div>
 	</div>
+    {% csrf_token %}
+</form>
+
 </body>
 </html>
