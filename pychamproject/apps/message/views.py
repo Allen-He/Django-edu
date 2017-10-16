@@ -9,12 +9,19 @@ def getform(request):
     # for message in all_messages:
     #     print message.name
 
-    # user_message = UserMessage()
-    # user_message.name = "atuko"
-    # user_message.email = "atuko@a.com"
-    # user_message.address = "akb48"
-    # user_message.message = "ajiang"
-    # user_message.save()
+
+
+    if request.method == "POST":
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        address = request.POST.get('address', '')
+        message = request.POST.get('message', '')
+        user_message = UserMessage()
+        user_message.name = name
+        user_message.email = email
+        user_message.address = address
+        user_message.message = message
+        user_message.save()
 
 
 
