@@ -11,7 +11,7 @@ from django.contrib.auth.models import AbstractUser
 class UserProfile(AbstractUser):
     nick_name = models.CharField(max_length=50, verbose_name=r"昵称", default=" ")
     birthday = models.DateField(verbose_name=u"生日", null=True, blank=True)
-    gender = models.CharField(max_length=5,choices=(("male",u"男"),("female",u"女")),default="female")
+    gender = models.CharField(max_length=6,choices=(("male",u"男"),("female",u"女")),default="female")
     address = models.CharField(max_length=100,default=u"")
     mobile = models.CharField(max_length=11,null=True,blank=True)
     image = models.ImageField(upload_to="image/%Y/%m",default=u"image/default.png",max_length=100)
@@ -27,7 +27,7 @@ class UserProfile(AbstractUser):
 class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20, verbose_name=u"验证码")
     email = models.EmailField(max_length=50, verbose_name=u"邮箱")
-    send_type = models.CharField(choices=(("register",u"注册"), ("forget",u"忘记密码")),max_length=10)
+    send_type = models.CharField(verbose_name=u"发送类型",choices=(("register",u"注册"), ("forget",u"忘记密码")),max_length=10)
     send_time = models.DateTimeField(default=datetime.now)#如果不去掉now后的（），他生成的时间是model编译的时间，去掉括号是生成实例化的时间
 
     class Meta:
