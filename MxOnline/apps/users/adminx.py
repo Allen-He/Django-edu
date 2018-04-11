@@ -13,6 +13,7 @@ class BaseSetting(object):
 class GlobalSetting(object):
     site_title = "AKB48知识讲堂后台系统"
     site_footer = "ribosome有限公司"
+    menu_style = "accordion"
 
 class EmailVerifyRecordAdmin(object):
 
