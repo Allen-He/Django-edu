@@ -1,3 +1,4 @@
+# _*_ coding: utf-8 _*_
 """
 Django settings for MxOnline project.
 
@@ -131,4 +132,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'  #这里的是引用指针，不是具体的目录，可修改，在html中引用必须和它对应
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"), #这里跟目录的名字对应，和html中引用无关，此处是元祖，要加上逗号
+)
