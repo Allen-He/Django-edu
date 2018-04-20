@@ -21,3 +21,4 @@ import xadmin
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
 ]
+
