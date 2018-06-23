@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-{% load staticfiles %}
+
 <head>
 	<meta charset="UTF-8">
     <meta name="renderer" content="webkit">
@@ -50,9 +50,9 @@
     <div class="c-box bg-box">
         <div class="login-box clearfix">
             <div class="hd-login clearfix">
-                <a class="index-logo" href="/"></a>
+                <a class="index-logo" href="index.html"></a>
                 <h1>用户登录</h1>
-                <a class="index-font" href="{% url 'index' %}">回到首页</a>
+                <a class="index-font" href="index.html">回到首页</a>
             </div>
             <div class="fl slide">
                 <div class="imgslide">
@@ -67,23 +67,23 @@
             </div>
             <div class="fl form-box">
                 <h2>帐号登录</h2>
-                <form action="/login/" method="post" autocomplete="off">
+                <form action="login.html" method="post" autocomplete="off">
                     <input type='hidden' name='csrfmiddlewaretoken' value='mymQDzHWl2REXIfPMg2mJaLqDfaS1sD5' />
-                    <div class="form-group marb20 {% if login_form.errors.username %}errorput{% endif %}">
+                    <div class="form-group marb20 ">
                         <label>用&nbsp;户&nbsp;名</label>
                         <input name="username" id="account_l" type="text" placeholder="手机号/邮箱" />
                     </div>
-                    <div class="form-group marb8 {% if login_form.errors.password %}errorput{% endif %}">
+                    <div class="form-group marb8 ">
                         <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                         <input name="password" id="password_l" type="password" placeholder="请输入您的密码" />
                     </div>
-                    <div class="error btns login-form-tips" id="jsLoginTips">{% for key,error in login_form.errors.items %}{{ error }}{% endfor %}{{ msg }}</div>
+                    <div class="error btns login-form-tips" id="jsLoginTips"></div>
                      <div class="auto-box marb38">
-{#                        <label><input type="checkbox" id="jsAutoLogin"> 自动登录</label>#}
-                        <a class="fr" href="{% url 'forget_pwd' %}">忘记密码？</a>
+
+                        <a class="fr" href="forgetpwd.html">忘记密码？</a>
                      </div>
                      <input class="btn btn-green" id="jsLoginBtn" type="submit" value="立即登录 > " />
-                {% csrf_token %}
+                <input type='hidden' name='csrfmiddlewaretoken' value='5I2SlleZJOMUX9QbwYLUIAOshdrdpRcy' />
                 </form>
                 <p class="form-p">没有慕学在线网帐号？<a href="register.html">[立即注册]</a></p>
             </div>
